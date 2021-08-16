@@ -29,7 +29,8 @@ As to not disturb the puzzle's pre-filled in clues, we implement a secondary arr
 
 ### Sets
 Essential for determining if a move is valid is checking if a number is already included in the row, column or neighborhood. 
-For each of these sections will will maintain a set (hashset):
+For each of these sections will will maintain a set. 
+These sets will likely be implemented with arrays as we know exactly how many items at most will be in the set and we have integer keys.
 
 ```
 valid move(n, i, j):
