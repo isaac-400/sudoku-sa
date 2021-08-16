@@ -1,0 +1,20 @@
+Simple Sudoku Solver
+====================
+
+We've all made one of these right? This one attempts to be as easy to read and concise as
+possible. 
+
+
+Installation
+------------
+
+run make
+
+Usage:
+
+./sudoku create 
+prints a puzzle to stdout
+
+./sudoku solve 
+takes a puzzle from stdin and prints a solution
+
