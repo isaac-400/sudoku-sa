@@ -40,3 +40,22 @@ valid move(n, i, j):
   return false
 ```
 
+## Puzzle Generation
+
+[The general algorithm for making the solved puzzles](https://www.algosome.com/articles/create-a-solved-sudoku.html)
+[the removing part](https://www.createclassicsudoku.com/helpcenter_how_to_make_a_sudoku_fillremovemethod.jsp)
+  
+The general idea here is to create a random, fully-solved sudoku and remove numbers carefully to generate an unsolved puzzle.
+
+## Puzzle Solving
+
+Use a simple backtracking algorithm. 
+
+1. Fill the current square in a valid way.
+2. Fill the next square
+  a. if there are no valid ways to fill the square, backtrack to the previous square and redo (1) and choose the next valid number
+  b. continue to the next square and do (1)
+
+Repeat until all squares are filled. This is not elegant, but it does the job for 9x9 puzzles.
+
+For the future: implement a stochastic solver.
