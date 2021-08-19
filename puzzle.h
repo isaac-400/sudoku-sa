@@ -17,11 +17,11 @@ typedef struct puzzle puzzle_t; // the sudoku puzzle
  *
  * Creates a blank puzzle. 
  *
- * params: dimensions of the puzzle
+ * params: size - the width and height of the puzzle
  * returns: a pointer to a blank puzzle_t or NULL on error
  * memory contract: the puzzle returned must be free'd by the caller using puzzle_delete()
  */
-puzzle_t* puzzle_new(int width, int height);
+puzzle_t* puzzle_new(const int size);
 
 
 /* puzzle_generate - generate an unsolved sudoku
@@ -52,11 +52,10 @@ int puzzle_solve(puzzle_t* p, int max_moves);
  *
  * params: p - the puzzle to print
  *         fp - a FILE to print the puzzle to
- *         empty_char - the character to print for an empty cell
  *returns: 0 on success, -1 on failure
  * memory contract: none
  */
-int puzzle_print(puzzle_t* p, FILE* fp, const char empty_char);
+int puzzle_print(puzzle_t* p, FILE* fp);
 
 /* puzzle_delete - cleans up the memory footprint of the puzzle
  *
