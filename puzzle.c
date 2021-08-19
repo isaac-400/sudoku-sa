@@ -37,17 +37,16 @@ puzzle_t* puzzle_new(const int size)
 
   puzzle_t* p = assertp(calloc(1, sizeof(puzzle_t)));
   
-  int** p->values = assertp(calloc(size, sizeof(int*)));
-  int** p->prefilled = assertp(calloc(size, sizeof(int*)));
+  p->values = assertp(calloc(size, sizeof(int*)));
+  p->prefilled = assertp(calloc(size, sizeof(int*)));
 
-  for (int i = 0; i < size, i++) {
+  for (int i = 0; i < size; i++) {
     int* row = assertp(calloc(size, sizeof(int)));
     int* prefilled_row = assertp(calloc(size, sizeof(int)));
     p->values[i] = row;
     p->prefilled[i] = prefilled_row;
   }
 
-  int p->size = assertp(calloc(1, sizeof(int)));
   p->size = size;
   return p;
 }
@@ -85,6 +84,7 @@ int puzzle_print(puzzle_t* p, FILE* fp)
     for (int j = 0; j < p->size; j++) {
       fprintf(fp, "%d", p->values[i][j]);
     }
+    fputc('\n', fp);
   }
   return 0;
 }
@@ -94,7 +94,7 @@ int puzzle_print(puzzle_t* p, FILE* fp)
 int puzzle_delete(puzzle_t* p) 
 {
   if (p == NULL) {
-    reutrn -1;
+    return -1;
   }
 
   for (int i = 0; i < p->size; i++) {
@@ -104,10 +104,12 @@ int puzzle_delete(puzzle_t* p)
 
   free(p->values);
   free(p->prefilled);
-  free(p->size);
   free(p);
 
   return 0;
 }
+
+
+
 
 

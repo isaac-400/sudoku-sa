@@ -9,6 +9,7 @@
 #define PUZZLE_H
 
 #include <stdlib.h>
+#include <stdio.h>
 
 /* Global Types */
 typedef struct puzzle puzzle_t; // the sudoku puzzle
