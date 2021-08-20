@@ -33,6 +33,17 @@ int main()
   EXPECT(puzzle != NULL);
   puzzle_print(puzzle, stdout);
   puzzle_delete(puzzle);
+  
+  FILE* fp = fopen("test_puzzle01", "r");
+  if (fp == NULL) {
+    fprintf(stderr, "Missing or unreadable: test_puzzle");
+    exit(-1);
+  }
+  puzzle_t* puzzle1 = puzzle_load(fp, 9);
+  fclose(fp);
+  EXPECT(puzzle1 != NULL);
+  puzzle_print(puzzle1, stdout);
+  puzzle_delete(puzzle1);
 
 
   if (unit_failed > 0) {
