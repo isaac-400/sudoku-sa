@@ -25,6 +25,19 @@ typedef struct puzzle puzzle_t; // the sudoku puzzle
 puzzle_t* puzzle_new(const int size);
 
 
+/* puzzle_load - read a puzzle in from file 
+ *
+ * loads a puzzle from file.
+ * the puzzle must be valid or errors will occur
+ *
+ * params:fp - a FILE to read the puzzle from 
+ *        size - the width and height of the puzzle
+ * returns: a pointer to a blank puzzle_t or NULL on error
+ * memory contract: the puzzle returned must be free'd by the caller using puzzle_delete()
+ */
+puzzle_t* puzzle_load(FILE* fp, const int size);
+
+
 /* puzzle_generate - generate an unsolved sudoku
  * 
  * Generates a puzzle_t with some prefilled squares and some empty squares

@@ -2,7 +2,7 @@
 # Isaac Feldman 2021
 PROG = 
 OBJS = puzzle.o
-LIBS = 
+LIBS = ../lib/readlinep.o 
 CFLAGS =  -Wall -pedantic -std=c11 -ggdb 
 CC = gcc
 
@@ -10,9 +10,10 @@ CC = gcc
 
 all: puzzle.o
 
-unittest: $(OBJS) puzzle_unit_test.o $(LIBS)
+unittest: $(OBJS) puzzle_unit_test.o 
 	$(CC) $(CFLAGS) $^ $(LIBS) -o $@
 	valgrind ./unittest
+	#./unittest
 	rm -f unittest
 
 puzzle.o: puzzle.h 
