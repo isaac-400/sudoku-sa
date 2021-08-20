@@ -43,10 +43,9 @@ valid move(n, i, j):
 
 ## Puzzle Generation
 
-[The general algorithm for making the solved puzzles](https://www.algosome.com/articles/create-a-solved-sudoku.html)
-[the removing part](https://www.createclassicsudoku.com/helpcenter_how_to_make_a_sudoku_fillremovemethod.jsp)
-  
-The general idea here is to create a random, fully-solved sudoku and remove numbers carefully to generate an unsolved puzzle.
+First create a solved sudoku puzzle. This can be done by filling a grid with the proper numbers and performing random swaps until the board is valid.  
+ 
+Follow the simulated annealing process as defined by the attached paper.
 
 ## Puzzle Solving
 
